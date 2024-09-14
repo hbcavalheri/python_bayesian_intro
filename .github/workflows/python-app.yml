@@ -34,4 +34,4 @@ jobs:
     - name: Deploy
       if: github.ref == 'refs/heads/main'
       run: |
-        python run ./bayesian.py
+        python bayesian.py
