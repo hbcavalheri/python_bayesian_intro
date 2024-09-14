@@ -1,6 +1,5 @@
 import numpy as np
 import pymc as pm
-import matplotlib.pyplot as plt
 
 np.random.seed(42)
 n_samples = 100
