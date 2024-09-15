@@ -35,3 +35,15 @@ jobs:
       if: github.ref == 'refs/heads/main'
       run: |
         python bayesian.py
+
+  docker:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Docker Build
+        run: docker/setup-buildx--action@v2
+      - name: Docker Image
+        run: docker build -t my-python-app .
+      - name: Docker Run
+        run: docker run my-python-app
