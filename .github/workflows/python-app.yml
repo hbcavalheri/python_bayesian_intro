@@ -48,8 +48,7 @@ jobs:
       - name: Docker Image
         id: docker-build
         run: |
-          docker build -t my-python-app -f .github/workflows/Dockerfile .
-          echo "IMAGE_TAG=my-python-app" >> $GITHUB_ENV
+          docker build -t my-python-app .
 
       - name: Docker Run
         run: docker run my-python-app
