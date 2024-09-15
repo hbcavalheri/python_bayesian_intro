@@ -46,9 +46,7 @@ jobs:
         uses: docker/setup-buildx-action@v2
 
       - name: Docker Image
-        id: docker-build
-        run: |
-          docker build -t my-python-app .
+        run: docker build -t my-python-app -f .github/workflows/Dockerfile .
 
       - name: Docker Run
         run: docker run my-python-app
