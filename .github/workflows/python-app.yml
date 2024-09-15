@@ -48,7 +48,7 @@ jobs:
         uses: docker/setup-buildx-action@v2
 
       - name: Docker Image
-        run: docker build -t python-app -f python_bayesian_intro/Dockerfile .
+        run: docker build -t my-python-app -f .github/workflows/Dockerfile .github/workflows
 
       - name: Docker Run
-        run: docker run python-app
+        run: docker run my-python-app
