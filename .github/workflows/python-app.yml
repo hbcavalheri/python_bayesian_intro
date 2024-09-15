@@ -42,8 +42,10 @@ jobs:
 
     steps:
       - name: Docker Build
-        run: docker/setup-buildx--action@v2
+        run: docker/setup-buildx-action@v2
+
       - name: Docker Image
         run: docker build -t my-python-app .
+        
       - name: Docker Run
         run: docker run my-python-app
