@@ -53,13 +53,13 @@ jobs:
         with:
           context: .
           push: false
-          tags: user:app:latest
+          tags: user/app:latest
 
   discord:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Run Discord Webhook
-        uses: hbcavalheri/python_bayesian_intro@main
+        uses: Sniddl/discord-commits@v1.6
         with:
           webhook_url: $ {{ secrets.DISCORD_WEBHOOK }}
