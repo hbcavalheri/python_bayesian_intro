@@ -19,6 +19,5 @@ with pm.Model() as model:
     y_obs = pm.Normal("y_obs", mu=mu, sigma=sigma, observed=y)
 
     trace = pm.sample(2000, return_inferencedata=False)
-    print('hello')
 
 
