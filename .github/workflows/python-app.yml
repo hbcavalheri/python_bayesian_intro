@@ -58,8 +58,9 @@ jobs:
   discord:
     runs-on: ubuntu-latest
     steps:
-      - name: Run Discord Webhook
-        run: |
-        curl -H "Content-Type: application/json" \
-        -d "{\"content\": \"Novo push no branch main!\"}" \
-        "${{ secrets.DISCORD_WEBHOOK_URL }}"
+      - name: Discord Commits
+        uses: Sniddl/discord-commits@v1.6
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          template: "avatar-with-link"
+          include-extras: true
