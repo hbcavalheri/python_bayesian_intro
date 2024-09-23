@@ -20,7 +20,4 @@ with pm.Model() as model:
 
     trace = pm.sample(2000, return_inferencedata=False)
 
-    print('hello')
-
-
 
