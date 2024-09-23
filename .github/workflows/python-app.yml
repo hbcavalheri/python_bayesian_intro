@@ -43,13 +43,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup QEMU
-        uses: doscker/setup-qemu-action@v3
+        uses: docker/setup-qemu-action@v3
 
       - name: Setup Docker
         uses: docker/setup-buildx-action@v3
 
       - name: Build
-        uses: dockes/build-push-action@v6
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: false
