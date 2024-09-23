@@ -63,3 +63,4 @@ jobs:
         curl -H "Content-Type: application/json" \
         -d "{\"content\": \"Novo push no branch main!\"}" \
         ${{ secrets.DISCORD_WEBHOOK_URL }}
+        
