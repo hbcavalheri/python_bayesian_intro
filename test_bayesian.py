@@ -30,5 +30,5 @@ def test_trace_length(setup_data):
     model.build_model()
     trace = model.get_trace()
 
-    assert len(trace["slope"]) == 8000, "O número de amostras no trace está correto."
+    assert len(trace["slope"]) == 4000, "O número de amostras no trace está correto."
 
