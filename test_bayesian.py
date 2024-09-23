@@ -20,7 +20,7 @@ def test_build_model(setup_data):
     model = BayesianAnalysis(X, y)
     model.build_model()
 
-    assert model.model is not None, "O modelo não foi construído corretamente."
+    assert model.model is not None, "huve um erro na construção do modelo."
     assert model.get_trace() is not None, "O trace não foi gerado."
 
 def test_trace_length(setup_data):
