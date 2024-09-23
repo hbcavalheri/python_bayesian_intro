@@ -35,3 +35,31 @@ jobs:
       if: github.ref == 'refs/heads/main'
       run: |
         python bayesian.py
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup QEMU
+        uses: doscker/setup-qemu-action@v3
+
+      - name: Setup Docker
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build
+        uses: dockes/build-push-action@v6
+        with:
+          context: .
+          push: false
+          tags: user:app:latest
+
+  discord:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Discord Webhook
+        uses: hbcavalheri/python_bayesian_intro@main
+        with:
+          webhook_url: $ {{ secrets.DISCORD_WEBHOOK }}
